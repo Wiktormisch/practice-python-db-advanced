@@ -5,4 +5,3 @@ DATABASE_URL = "postgresql+psycopg2://postgres:admin1@localhost:5432/postgres"
 
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
-
