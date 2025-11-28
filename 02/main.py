@@ -41,8 +41,7 @@ with Session(engine) as session:
 
 with Session(engine) as session:
     try:
-        authors_query = (session.query(Author, func.count(Book.id).label(
-            "book_count"))).join(Book).group_by(Author.id).having(func.count(Book.id) > 1)
+        authors_query = (session.query(Author, func.count(Book.id))).join(Book).group_by(Author.id).having(func.count(Book.id) > 1)
 
         results = authors_query.all()
 
